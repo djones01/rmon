@@ -1,0 +1,24 @@
+{
+  "name": "rmon-serv",
+  "version": "0.0.0",
+  "private": true,
+  "scripts": {
+    "serv": "node ./bin/www",
+    "client": "npm run serve --prefix ../rmon-client",
+    "dev":"concurrently \"npm run serv\" \"npm run client\""
+  },
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "concurrently": "^5.0.2",
+    "cookie-parser": "~1.4.4",
+    "cors": "^2.8.5",
+    "debug": "~2.6.9",
+    "express": "^4.17.1",
+    "http-errors": "~1.6.3",
+    "jade": "~1.11.0",
+    "moment": "^2.24.0",
+    "mongoose": "^4.13.20",
+    "morgan": "~1.9.1",
+    "nodemon": "^2.0.2"
+  }
+}
