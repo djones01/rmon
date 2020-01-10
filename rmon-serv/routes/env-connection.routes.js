@@ -2,8 +2,8 @@ const express = require('express');
 const router = express.Router();
 const EnvConnection = require('../models/env-connection');
 
-router.route('/envConnection').post((req, res) => {
-    var envConnection = new Todo(req.body);
+router.post('/', (req, res) => {
+    var envConnection = new EnvConnection(req.body);
     envConnection.save().then( envConnection => {
      res.status(200).json({'message': 'Environment Connection successfully added '});
      })
@@ -12,21 +12,22 @@ router.route('/envConnection').post((req, res) => {
      });
   });
 
-router.get('/envConnection', (req, res) => {
-    EnvConnection.find((err, todos) =>{
+router.get('/', (req, res) => {
+    EnvConnection.find((err, envConnections) =>{
         if(err){
           console.log(err);
         }
         else {
-          res.json(todos);
+          res.json(envConnections);
         }
       });
 });
 
-
-router.route('/todos/:id').get((req, res) => {
+router.get('/:id', (req, res) => {
     var id = req.params.id;
-    Todo.findById(id, (err, todo) =>{
-        res.json(todo);
+    EnvConnection.findById(id, (err, envConnection) =>{
+        res.json(envConnection);
     });
-  });
+});
+
+module.exports = router;
