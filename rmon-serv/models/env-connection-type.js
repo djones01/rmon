@@ -1,7 +1,7 @@
 const mongoose = require('mongoose');
 const EnvConnectionTypePropertySchema = require('./env-connection-type-property')
 
-// EnvConnectionType Schema
+// Declare the Schema of the Mongo model
 const EnvConnectionTypeSchema = new mongoose.Schema({
     name: {
         type: String,
@@ -21,4 +21,5 @@ const EnvConnectionTypeSchema = new mongoose.Schema({
     timestamps: true
 });
 
+//Export the schema
 module.exports = EnvConnectionTypeSchema;

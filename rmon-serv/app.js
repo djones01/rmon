@@ -3,6 +3,13 @@ var express = require('express');
 var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
+var mongoose = require('mongoose');
+
+// Connect to mongodb database
+mongoose.connect("mongodb://localhost:27017/rmondb").then(
+          () => {console.log('Database connection is successful') },
+          err => { console.log('Error when connecting to the database'+ err)}
+);
 
 // Import all defined routers
 var indexRouter = require('./routes/index');
