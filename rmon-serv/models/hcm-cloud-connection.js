@@ -1,5 +1,5 @@
 var mongoose = require('mongoose');
-var envConnection = require('./env-connection');
+var EnvConnection = require('./env-connection');
 const bcrypt = require('bcryptjs');
 
 // Declare connection subtype for HCM Cloud
@@ -44,7 +44,7 @@ HCMCloudConnectionSchema.methods.validPassword = function(password) {
 */
 
 //Export the schema
-module.exports = mongoose.model('HCMCloudConnection', HCMCloudConnectionSchema);
+module.exports = EnvConnection.discriminator('HCMCloudConnection',HCMCloudConnectionSchema);
 /* module.exports = {
     HCMCloudConnection: HCMCloudConnection,
     generateHash: HCMCloudConnection.methods.generateHash(),
