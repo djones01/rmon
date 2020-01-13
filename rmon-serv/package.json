@@ -5,9 +5,10 @@
   "scripts": {
     "serv": "node ./bin/www",
     "client": "npm run serve --prefix ../rmon-client",
-    "dev":"concurrently \"npm run serv\" \"npm run client\""
+    "dev": "concurrently \"npm run serv\" \"npm run client\""
   },
   "dependencies": {
+    "bcryptjs": "^2.4.3",
     "body-parser": "^1.19.0",
     "concurrently": "^5.0.2",
     "cookie-parser": "~1.4.4",

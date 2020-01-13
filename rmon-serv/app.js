@@ -15,6 +15,7 @@ mongoose.connect("mongodb://localhost:27017/rmondb").then(
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
 var envConnectionRouter = require('./routes/env-connection.routes');
+var hcmCloudConnectionRouter = require('./routes/hcm-cloud-connection.routes');
 
 var app = express();
 
@@ -32,6 +33,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
 app.use('/envConnection',envConnectionRouter);
+app.use('/envConnection/hcmCloud',hcmCloudConnectionRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
