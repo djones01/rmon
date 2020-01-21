@@ -1,12 +1,24 @@
 <template>
   <div id="app">
     <div id="nav">
+      <SideNav></SideNav>
       <router-link to="/">Home</router-link> |
       <router-link to="/about">About</router-link>
     </div>
     <router-view/>
   </div>
 </template>
+
+<script>
+import SideNav from './core/components/side-nav';
+
+export default {
+  name: 'app',
+  components: {
+    SideNav
+  }
+}
+</script>
 
 <style>
 #app {
